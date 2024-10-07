@@ -6,11 +6,11 @@
 #    By: erigolon <erigolon@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/07 14:27:47 by erigolon          #+#    #+#              #
-#    Updated: 2024/10/07 14:30:58 by erigolon         ###   ########.fr        #
+#    Updated: 2024/10/07 14:56:55 by erigolon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= a.out
+NAME	= ClapTrap
 
 SRC		= main.cpp \
 			ClapTrap.cpp 

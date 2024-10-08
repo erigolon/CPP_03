@@ -6,7 +6,7 @@
 /*   By: erigolon <erigolon@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 12:00:07 by erigolon          #+#    #+#             */
-/*   Updated: 2024/10/08 13:18:56 by erigolon         ###   ########.fr       */
+/*   Updated: 2024/10/08 15:07:05 by erigolon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 	this->_guardMode = false;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& copy)
+ScavTrap::ScavTrap(const ScavTrap& copy) : ClapTrap(copy)
 {
 	std::cout << "Copy ScavTrap constructor called" << std::endl;
 	

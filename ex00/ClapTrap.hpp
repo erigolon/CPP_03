@@ -6,7 +6,7 @@
 /*   By: erigolon <erigolon@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 14:28:19 by erigolon          #+#    #+#             */
-/*   Updated: 2024/10/07 15:50:05 by erigolon         ###   ########.fr       */
+/*   Updated: 2024/10/08 11:50:15 by erigolon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,18 @@ private:
     
 public:
 
+	ClapTrap(void);
     ClapTrap(std::string name);
-	ClapTrap(ClapTrap& copy);
+	ClapTrap(const ClapTrap& copy);
 
 	ClapTrap&		operator=(const  ClapTrap& copy);
 	
     ~ClapTrap(void);
+
+	std::string		getName(void) const;
+	unsigned int	getHitPoints(void) const;
+	unsigned int	getEnergyPoints(void) const;
+	unsigned int	getAttackDamage(void) const;
 	
 	void			attack(const std::string& target);
 	void 			takeDamage(unsigned int amount);

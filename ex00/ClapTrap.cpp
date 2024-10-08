@@ -6,15 +6,27 @@
 /*   By: erigolon <erigolon@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 14:28:07 by erigolon          #+#    #+#             */
-/*   Updated: 2024/10/07 15:46:53 by erigolon         ###   ########.fr       */
+/*   Updated: 2024/10/08 11:51:47 by erigolon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap(void)
+{
+	std::cout << "Default constructor called" << std::endl;
+	
+	this->_name 		= "unnamed";
+	this->_hitPoints	= 10;
+	this->_energyPoints	= 10;
+	this->_attackDamage	= 0;
+	
+	return ;
+}
+
 ClapTrap::ClapTrap(std::string name)
 {
-	std::cout << "Default constructor for " << name <<" called" << std::endl;
+	std::cout << "Parametric constructor for " << name <<" called" << std::endl;
 	
 	this->_name 		= name;
 	this->_hitPoints	= 10;
@@ -24,14 +36,11 @@ ClapTrap::ClapTrap(std::string name)
 	return ;
 }
 
-ClapTrap::ClapTrap(ClapTrap& copy)
+ClapTrap::ClapTrap(const ClapTrap& copy)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	
-	this->_name			= copy._name;
-	this->_hitPoints	= copy._hitPoints;
-	this->_energyPoints	= copy._energyPoints;
-	this->_attackDamage	= copy._attackDamage;
+	*this = copy;
 
 	return ;
 }
@@ -40,10 +49,13 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& copy)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	
-	this->_name			= copy._name;
-	this->_hitPoints	= copy._hitPoints;
-	this->_energyPoints	= copy._energyPoints;
-	this->_attackDamage	= copy._attackDamage;
+	if (this != &copy)
+	{
+		this->_name			= copy.getName();
+		this->_hitPoints	= copy.getHitPoints();
+		this->_energyPoints	= copy.getEnergyPoints();
+		this->_attackDamage	= copy.getAttackDamage();
+	}
 	
 	return (*this);
 }
@@ -53,6 +65,26 @@ ClapTrap::~ClapTrap(void)
 	std::cout << "Destructor for " << this->_name <<" called" << std::endl;
 	
 	return ;
+}
+
+std::string	ClapTrap::getName(void) const
+{
+	return(this->_name);
+}
+
+unsigned int	ClapTrap::getHitPoints(void) const
+{
+	return(this->_hitPoints);
+}
+
+unsigned int	ClapTrap::getEnergyPoints(void) const
+{
+	return(this->_energyPoints);
+}
+
+unsigned int	ClapTrap::getAttackDamage(void) const
+{
+	return(this->_attackDamage);
 }
 
 void    ClapTrap::attack(const std::string& target)

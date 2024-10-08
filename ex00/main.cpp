@@ -6,7 +6,7 @@
 /*   By: erigolon <erigolon@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 14:27:55 by erigolon          #+#    #+#             */
-/*   Updated: 2024/10/07 15:48:46 by erigolon         ###   ########.fr       */
+/*   Updated: 2024/10/08 11:53:52 by erigolon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 int	main(void)
 {
-	ClapTrap	bob("Bob");
+	ClapTrap	bob = ClapTrap("Bob");
 
 	ClapTrap	bib = bob;
+	ClapTrap	bubs[3];
+
 
 	bob.attack("a worm");
 	bob.attack("a worm");
